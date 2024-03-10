@@ -11,6 +11,9 @@ django = "^5.0.3"
 djangorestframework = "^3.14.0"
 uvicorn = "^0.28.0"
 
+[tool.poetry.scripts]
+serve-dev = "center_django.uvicorn:serve_dev"
+serve-prd = "center_django.uvicorn:serve_prd"
 
 [build-system]
 requires = ["poetry-core"]
