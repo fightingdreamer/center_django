@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "center-django"
+version = "0.1.0"
+description = ""
+authors = ["Patryk Stepien <fighting.dreamer@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.3"
+djangorestframework = "^3.14.0"
+uvicorn = "^0.28.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
