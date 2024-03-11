@@ -16,16 +16,14 @@ class StatisticSerializer(serializers.ModelSerializer):
 
 
 class LocationSerializer(serializers.Serializer):
-    location = serializers.CharField(
-        max_length=1023, allow_blank=False, trim_whitespace=True
-    )
+    location = serializers.URLField(max_length=1023, allow_blank=False)
 
 
 class RedirectionSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField("get_name")
 
     def get_name(self, obj):
-        return mapping.encode_with_padding(obj.id, size=20, randomize=False)
+        return mapping.encode_with_padding(obj.id, size=9, randomize=False)
 
     class Meta:
         model = models.Redirection
