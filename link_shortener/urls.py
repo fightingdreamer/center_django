@@ -9,12 +9,12 @@ urlpatterns = [
         name="create-redirection",
     ),
     path(
-        "api/redirections/-<str:name>/user-info",
+        "api/redirections/<str:name>/user-info",
         views.get_user_info,
         name="get-user-info",
     ),
     path(
-        "api/redirections/-<str:name>/statistics",
+        "api/redirections/<str:name>/statistics",
         views.get_statistics,
         name="get-statistics",
     ),
