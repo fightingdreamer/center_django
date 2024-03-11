@@ -4,17 +4,17 @@ from link_shortener import views
 
 urlpatterns = [
     path(
-        "redirections/",
+        "api/redirections/",
         views.create_redirection,
         name="create-redirection",
     ),
     path(
-        "redirections/-<str:name>/user-info",
+        "api/redirections/-<str:name>/user-info",
         views.get_user_info,
         name="get-user-info",
     ),
     path(
-        "redirections/-<str:name>/statistics",
+        "api/redirections/-<str:name>/statistics",
         views.get_statistics,
         name="get-statistics",
     ),
