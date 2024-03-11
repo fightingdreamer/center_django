@@ -1,6 +1,5 @@
 from django.db.models import F, ObjectDoesNotExist
 from django.http.response import HttpResponseRedirect
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework.exceptions import NotFound, ParseError, status
 from rest_framework.response import Response
@@ -60,7 +59,7 @@ def create_redirection(request):
     )
 
 
-@csrf_exempt
+@api_view(["GET"])
 def redirect(request, name: str):
     try:
         id_from_name = mapping.decode_drop_padding(name)
