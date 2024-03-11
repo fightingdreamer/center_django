@@ -1,10 +1,6 @@
 import random
 
-numbers = "23456789"
-letters_lower = "bcdfghjkmnpqrstvwxyz"
-letters_upper = "BCDFGHJKMNPQRSTVWXYZ"
-
-mapping = numbers + letters_lower + letters_upper
+mapping = "bcdfghjkmnpqrstvwxyzBCDFGHJKMNPQRSTVWXYZ23456789"
 mapping_reverse_lookup = {character: nr for nr, character in enumerate(mapping)}
 
 
