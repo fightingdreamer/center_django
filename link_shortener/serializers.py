@@ -1,3 +1,4 @@
+from django.conf import settings
 from rest_framework import serializers
 
 from link_shortener import mapping, models
@@ -23,7 +24,11 @@ class RedirectionSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField("get_name")
 
     def get_name(self, obj):
-        return mapping.encode_with_padding(obj.id, size=9, randomize=False)
+        return mapping.encode_with_padding(
+            obj.id,
+            size=settings.LINK_SIZE,
+            randomize=settings.LINK_RANDOMIZE,
+        )
 
     class Meta:
         model = models.Redirection

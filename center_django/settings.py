@@ -93,3 +93,8 @@ STATIC_URL = "static/"
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Settings for link_shortener module
+
+LINK_SIZE = 9
+LINK_RANDOMIZE = False
